@@ -8,7 +8,8 @@ Público objetivo: jóvenes adultos participantes e interesados en el hobby.
 - http://starcitygames.com/
 - https://magic.wizards.com/
 - https://www.mercadolibre.com.ar/
-- 
+- https://www.cardmarket.com/es/Magic
+- https://us.geekstore.com/
 
 ### Cambalache
 
