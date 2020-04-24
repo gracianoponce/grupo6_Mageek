@@ -1,3 +1,10 @@
+## Links
+
+Trello
+https://trello.com/b/RaaRs3KM/grupo6mageek
+GitHub
+https://github.com/0220CBFSNCN01ARLP/grupo6_Mageek
+
 ## Temática del sitio y público objetivo
 
 Sitio de e-commerce con mercadería geek: cardgames, RPGs, minis.
