@@ -1,3 +1,8 @@
+header {
+  width: 100%;
+  
+}
+
 body {
   padding: 0px;
   margin: 0px;
@@ -8,5 +13,5 @@ a {
   color: #00B7FF;
 }
 .barra-buscador {
-  background-color: #0A1826;
+  background-color: #2274A5;
 }
