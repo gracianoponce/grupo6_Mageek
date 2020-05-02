@@ -1,43 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+  <! color palette A6E1FA - 0E6BA8 - 0A2472 - 001C55 - 00072D >
 
-<! color palette A6E1FA - 0E6BA8 - 0A2472 - 001C55 - 00072D >
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./public/stylesheets/style.css">
-    <link rel="stylesheet" href="./public/stylesheets/productCart.css">
-</head>
+    <title>Carrito de compras</title>
 
-<body>
-    <header><! El mismo navegador de siempre>
-        <div class="barra-buscador">       
-            <div class="logo"><img src="./public/img/logo.png" height="100px"></div>
+    <!-- Source Sans Pro, 300-400-700 -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font awesome icon pack -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link rel="stylesheet" href="./public/stylesheets/style.css" />
+    <link rel="stylesheet" href="./public/stylesheets/productCart.css" />
+  </head>
+
+  <body>
+    <header>
+      <! El mismo navegador de siempre>
+      <div class="barra-buscador">
+        <div class="logo">
+          <a href=""> <i class="fa fa-bars"></i></a>
+          <form class="buscador" action="INSERTAR URL" method="post">
+            <input class="" type="text" placeholder="Buscar..." name="search" />
+            <!-- <button type="submit"><i class="fa fa-search"></i></button> -->
+          </form>
+          <img src="./public/img/logo.png" />
+          <i class="fa fa-shopping-cart"></i>
         </div>
-        <div class="barra-carrito">
-            <br>
-        </div>
+      </div>
+
+      <! Selector Carrito - Wishlist >
+      <div class="selector-superior">
+        <span class="texto-selector"> Carrito (0)</span>
+      </div>
+      <div class="selector-superior">
+        <span class="texto-selector"> Guardar (0)</span>
+      </div>
     </header>
 
-    <main><! Carrito/guardados. Wishlist? >
-        <div><p class="opciones-carrito">Carrito (0)  Guardar (0)</p></div>
-        <section class="articulos-carrito">
-            <article class="elemento"></article>
-            <article class="elemento"></article>
-            <article class="elemento"></article>
-            <article class="elemento"></article>
-            <article class="elemento"></article>
-        </section>
+    <main>
+      <! Carrito/guardados. Wishlist? >
+      <section class="articulos-carrito">
+        <article class="elemento"></article>
+        <article class="elemento"></article>
+        <article class="elemento"></article>
+        <article class="elemento"></article>
+        <article class="elemento"></article>
+      </section>
     </main>
 
-    <nav> <! Productos que te interesaron >
-
-    </nav>
-    <footer><! contacto, información, legal>
-
-    </footer>
-</body>
-
+    <nav><! Productos que te interesaron ></nav>
+    <footer><! contacto, información, legal></footer>
+  </body>
 </html>

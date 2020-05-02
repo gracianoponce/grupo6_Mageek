@@ -1,13 +1,8 @@
-.barra-carrito {
-  
-  margin: 0px;
+/* Divisiones principales */
+body {
+  background-color: #A9DFF2;
 }
-.logo {
-  background-color: inherit;
-}
-.elemento {
 
-}
 main {
   width: 90%;
   margin-right: 5%;
@@ -15,6 +10,27 @@ main {
   box-sizing: border-box;
   background-color: #B9EFFF;
 }
-body {
-  background-color: #A9DFF2;
+
+.selector-superior {
+  width: 50%;
+  height: 6vh;
+  background-color: #2274A5;
+  margin: 0px;
+  float: left;
+  text-align: center;
+  font-size: 1.3em;
+  font-weight: 300;
+  border-right: rgba(3, 58, 90, 0.144) 1px solid;
+  /* display: inline-block; */
+}
+
+.texto-selector {
+  position: relative;
+  top: 1.3vh;
+}
+
+
+/* Iconos */
+.fa-shopping-cart {
+  float: right;
 }
