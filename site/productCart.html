@@ -30,8 +30,14 @@
         <div class="logo">
           <a href=""> <i class="fa fa-bars"></i></a>
           <form class="buscador" action="INSERTAR URL" method="post">
-            <input class="" type="text" placeholder="Buscar..." name="search" />
-            <!-- <button type="submit"><i class="fa fa-search"></i></button> -->
+            <input
+              class="campo-buscador"
+              type="text"
+              placeholder="Buscar...      "
+              name="search"
+            />
+            <i class="fa fa-search"></i>
+            <!-- <button type="submit"></button> -->
           </form>
           <img src="./public/img/logo.png" />
           <i class="fa fa-shopping-cart"></i>
@@ -40,7 +46,7 @@
 
       <! Selector Carrito - Wishlist >
       <div class="selector-superior">
-        <span class="texto-selector"> Carrito (0)</span>
+        <span class="texto-selector"> Carrito (3)</span>
       </div>
       <div class="selector-superior">
         <span class="texto-selector"> Guardar (0)</span>
@@ -50,11 +56,40 @@
     <main>
       <! Carrito/guardados. Wishlist? >
       <section class="articulos-carrito">
-        <article class="elemento"></article>
-        <article class="elemento"></article>
-        <article class="elemento"></article>
-        <article class="elemento"></article>
-        <article class="elemento"></article>
+        <article class="elemento">
+          <img class="thumb-carrito" src="./public/img/hammer.jpeg" alt="" />
+          <span class="texto-carrito">
+            <h3>Título del artículo</h3>
+            <p class="descripcion-carrito">Descripción del artículo</p>
+            <span class="cantidad-carrito">Cantidad: 1</span>
+            <span class="precio-carrito">$12.456,78</span>
+          </span>
+        </article>
+
+        <article class="elemento">
+          <img class="thumb-carrito" src="./public/img/sickle.jpeg" alt="" />
+          <span class="texto-carrito">
+            <h3>Título del artículo</h3>
+            <p class="descripcion-carrito">Descripción del artículo</p>
+            <span class="cantidad-carrito">Cantidad: 1</span>
+            <span class="precio-carrito">$12.456,78</span>
+          </span>
+        </article>
+
+        <article class="elemento">
+          <img class="thumb-carrito" src="./public/img/logo.png" alt="" />
+          <span class="texto-carrito">
+            <h3>Título del artículo</h3>
+            <p class="descripcion-carrito">Descripción del artículo</p>
+            <p class="precio-carrito">$12.456,78</p>
+          </span>
+        </article>
+        <!-- <article class="elemento">
+
+        </article>
+        <article class="elemento">
+
+        </article> -->
       </section>
     </main>
 
