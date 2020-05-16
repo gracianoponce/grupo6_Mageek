@@ -1,0 +1,15 @@
+.barra-carrito {
+    height: 30px;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+.imagen-producto {
+    height: -moz-available;
+    /* padding-top: 10px;
+    padding-right: 10px; */
+}
+.producto {
+    margin: 10px;
+}

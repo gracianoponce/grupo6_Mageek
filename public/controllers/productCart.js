@@ -1,6 +1,6 @@
 const controller = {
     cart: (req, res, next) => {
-    res.render("productCart"); // Needs DB
+    res.render("cart", { title: "Express" }); // Needs DB
 },
 };
 module.exports = controller;

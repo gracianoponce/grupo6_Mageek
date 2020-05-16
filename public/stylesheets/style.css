@@ -1,5 +1,10 @@
 /* Header */
-.fa-shopping-cart,
-.fa-search {
-  margin-right: 15px;
+.fa-shopping-cart {
+margin-right: 15px;
+}
+.lupita {
+  margin-right: 10px;
+  }
+.campo-buscador {
+  width: 140%;
 }
