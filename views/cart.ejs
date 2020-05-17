@@ -1,52 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <%- include("partials/head") %>
-        <link rel="stylesheet" href="/stylesheets/cart.css" />
-    </head>
-    
-    <body>
-        <header class="">
-            <%- include("partials/header") %>
-            <%- include("partials/headerCart") %>
-        </header>
-        
-        <main>
-            <nav class="container">
-                <div class="row justify-content-center">
-                    <article class="col-12 bg-secondary producto row">
-                        <img src="/img/ragingGoblin.jpeg" class="imagen-producto col-4">
-                            <div class="col-8">
-                                <h2 class="nombre-producto">Raging Goblin</h2>
-                                <p class="price color-red">$0.10</p>
-                                <p class="descripcion">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni at molestias et nihil
-                                    vel eaque quos cumque voluptatem impedit maxime?</p> 
-                            </div>
-                            <!-- IMPLEMENTAR HOVER PARA LEER LA DESCRIPCION -->
-                    </article>
-                    <article class="col-11 bg-secondary producto">
-                    <div>
-                        <img src="/img/hammer.jpeg" class="float-left imagen-producto">
-                        <h2 class="nombre-producto">martillo</h2>
-                    </div>
-                    <p class="price">$1.500</p>
-                    <p class="descripcion">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni at molestias et nihil
-                    vel eaque quos cumque voluptatem impedit maxime?</p> 
-                    <!-- IMPLEMENTAR HOVER PARA LEER LA DESCRIPCION -->
-                </article>
-                <article class="col-11 bg-secondary producto">
-                    <div>
-                        <img src="/img/hammer.jpeg" class="float-left imagen-producto">
-                        <h2 class="nombre-producto">martillo</h2>
-                    </div>
-                    <p class="price">$1.500</p>
-                    <p class="descripcion">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni at molestias et nihil
-                    vel eaque quos cumque voluptatem impedit maxime?</p> 
-                    <!-- IMPLEMENTAR HOVER PARA LEER LA DESCRIPCION -->
-                </article>
+<head>
+    <%- include("partials/head") %>
+    <link rel="stylesheet" href="/stylesheets/cart.css" />
+</head>
+
+<body>
+    <header class="">
+        <!-- Searchbar -->
+        <%- include("partials/header") %>
+        <!-- ProductCart toggler -->
+        <%- include("partials/headerCart") %>
+    </header>
+
+    <main class="bg-white-10">
+        <!-- Cart items, need dynamic response -->
+        <nav class="container carrito-cont">
+            <div class="row justify-content-center">
+                <%- include("partials/producto-carrito") %>
+                <%- include("partials/producto-carrito") %>
+                <%- include("partials/producto-carrito") %>
+                <%- include("partials/producto-carrito") %>
+
             </div>
         </nav>
+        <nav class="container cart-footer bg-primary">
+            <div class="column">
+                <p class="info">Información:<span class="info-money">$1.203</span></p>
+                <p class="info">Información:<span class="info-money">$263</span></p>
+                <h2 class="total">Total <span class="total-money">$1.466</span></h2>
+                <button type="button" class="btn btn-secondary">Continuar compra</button>
+            </div>
+        </nav>
+
     </main>
 
     <nav></nav>
