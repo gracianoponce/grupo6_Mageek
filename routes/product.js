@@ -1,6 +1,6 @@
 var express = require("express");
 var router = express.Router();
-const controller = require(__dirname + "/../public/controllers/product");
+const controller = require(__dirname + "/../controllers/product");
 
 /* GET home page. */
 router.get("/", controller.none);
