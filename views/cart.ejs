@@ -25,18 +25,15 @@
 
             </div>
         </nav>
+        <!-- Menú de compra del carrito -->
         <nav class="container cart-footer bg-primary">
-            <div class="column">
-                <p class="info">Información:<span class="info-money">$1.203</span></p>
-                <p class="info">Información:<span class="info-money">$263</span></p>
-                <h2 class="total">Total <span class="total-money">$1.466</span></h2>
-                <button type="button" class="btn btn-secondary">Continuar compra</button>
-            </div>
+            <%- include("partials/compra-carrito") %>
         </nav>
 
     </main>
 
     <nav></nav>
+    <%- include("partials/footer") %>
 </body>
 
 </html>
