@@ -1,14 +1,22 @@
-var createError = require('http-errors');
 var express = require('express');
+var createError = require('http-errors');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var productCRouter = require('./routes/productCart');
-var productRouter = require('./routes/product');
+// Router
+
+const indexRouter = require('./routes/index');
+const productCRouter = require('./routes/productCart');
+const productRouter = require('./routes/product');
+const userRouter = require('./routes/user')
 
 var app = express();
+
+app.use('/', indexRouter);
+app.use('/cart', productCRouter);
+app.use('/products', productCRouter);
+app.use('/user', userRouter);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -20,9 +28,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/cart', productCRouter);
-app.use('/product', productCRouter);
+
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
