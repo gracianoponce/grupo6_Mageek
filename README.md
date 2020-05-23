@@ -13,10 +13,28 @@ Público objetivo: jóvenes adultos participantes e interesados en el hobby.
 ## Listado de al menos 5 páginas
 
 - http://starcitygames.com/
+
+Menú lateral.
+
 - https://magic.wizards.com/
+
+index con banner (fullscreen en mobile)
+doble header en lg+
+
 - https://www.mercadolibre.com.ar/
+
+Carrito. {cart}
+Productos en el index. {index}
+Menú de publicación {productReg}
+
 - https://www.cardmarket.com/es/Magic
+
+Doble header, doble menú lateral.
+
 - https://us.geekstore.com/
+
+Disposición, proporción imagen/texto, criterios estéticos.
+
 
 ### Cambalache
 

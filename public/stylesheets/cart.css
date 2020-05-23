@@ -1,3 +1,9 @@
+/* O R D E N A R */
+
+/* Header */
+.logo {
+    max-width: 100%;
+}
 h2 {
     font-size: 1rem;
 }
@@ -26,7 +32,9 @@ a {
     margin: 5px;
     padding: 10px;
     padding-top: 0px;
-    padding-bottom: 0px;margin-bottom: 0px;margin-top: .8vhpx;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    margin-top: 0.8vhpx;
 }
 .cuerpo-articulo {
     margin-top: 5px;
@@ -86,10 +94,10 @@ label {
 }
 .btn {
     display: inline-block;
-    width:70%;
+    width: 70%;
 }
 .boton {
     margin-top: 10px;
-    width:100%;
+    width: 100%;
     text-align: center;
 }
