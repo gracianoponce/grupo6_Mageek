@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <%- include("partials/head") %>
+    <link rel="stylesheet" href="/stylesheets/register.css" />
+</head>
+
+<body>
+    <header>
+        <%- include("partials/header2") %>
+    </header>
+
+    <main>
+        <a class="" href="../public/img/register.png" alt="mensaje_registro_producto"></a>
+        <!-- Frase -->
+        <!-- Formulario -->
+
+        <div class="container">
+            <h1 class="frase">
+                Registro de producto:</h1>
+            <form method="POST" enctype="multipart/form-data" action="/user/add">
+                <!-- name -->
+                <div class="form-group">
+                    <label for="name">Nombre de producto</label>
+                    <input type="text" class="form-control" id="name" aria-describedby="emailHelp"
+                    placeholder="Ej: Manual del Jugador Dungeons & Dragons 3.5" required>
+                </div>
+
+                <!-- price, number -->
+                <div class="form-group">
+                    <label for="price">Precio del producto</label>
+                    <input type="text" class="form-control" id="price" aria-describedby="price" placeholder="Ej: 150.50"
+                        required>
+                </div>
+
+                <!-- description -->
+                <div class="form-group">
+                    <label for="description">Descripción</label>
+                    <textarea class="form-control" id="description" rows="3"
+                    placeholder="Condiciones, detalles, consideraciones varias."></textarea>
+                </div>
+                <!-- usage, dropdown -->
+                <div class="form-group">
+                    <label for="usage">Uso</label>
+                    <select class="form-control" id="usage" required>
+                        <option style="display: none;" value="">Elija una opción</option>
+                        <option value="new">Nuevo (en su paquete)</option>
+                        <option value="fine">Casi nuevo (poco uso)</option>
+                        <option value="used">Usado</option>
+                        <option value="done">Muy usado</option>
+                    </select>
+                </div>
+                <!-- category?? 
+                <div class="form-group">
+                    <label for="usage">Categoría</label>
+                    <select class="form-control" id="usage">
+                        <option style="display: none;" value="">Elija una categoría</option>
+                        <option value="new">Cartas</option>
+                        <option value="fine">Dados</option>
+                        <option value="used">Juegos de mesa</option>
+                        <option value="done">Juegos de rol</option>
+                        <option value="done">Juegos electrónicos</option>
+                    </select>
+                </div>-->
+                    <!-- FROM HERE ONWARDS, ADAPT TO CATEGORY -->
+                <!-- flavortext -->
+                <div class="form-group">
+                    <label for="flavortext">Flavortext</label>
+                    <input type="text" class="form-control" id="flavortext" placeholder="Flavortext">
+                </div>
+                <div class="invalid-feedback">Example invalid custom select feedback</div>
+                <!-- <div class="invalid-feedback">
+                                    Escriba un nombre de producto válido por favor.
+                                </div> -->
+                <!-- upload pictures, ITERATE IF THERE IS A PICTURE UPLOADED? -->
+                <div class="form-group">
+                    <label for="prodPics">Subir fotos</label>
+                    <input type="file"  class="form-control-file" id="prodPics">
+                </div>
+
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Capaz esto resulta util?</label>
+                </div>
+
+                <button class="btn btn-primary" type="submit">Crear producto</button>
+
+            </form>
+        </div>
+
+
+
+
+
+
+        <!--
+    id": 1,
+    "name": "Cristi Aisbett",
+    "cost": "PLN",
+    "flavortext": null,
+    "description": "Multi-lateral zero tolerance groupware",
+    "usage": null,
+    "price": 745.71,
+    "pictures": "Sapien.jpeg",
+    "inSale": true,
+    "discount": 24,
+    "category": null
+    submit -->
+
+        <!-- opción para login -->
+    </main>
+
+    <footer><%- include("partials/footer") %></footer>
+</body>
+
+</html>

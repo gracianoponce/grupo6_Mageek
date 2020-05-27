@@ -4,7 +4,7 @@
         "name": "Cristi Aisbett",
         "cost": "PLN",
         "flavortext": null,
-        "description": "Multi-lateral zero tolerance groupware",
+        "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque ea quam nisi consequuntur doloribus dignissimos doloremque saepe deserunt impedit provident libero velit neque voluptate quae possimus quos corporis repudiandae nemo quisquam nobis est, suscipit magnam nam. In explicabo sequi praesentium repudiandae asperiores amet accusantium, laboriosam nam odio qui corporis quisquam.",
         "usage": null,
         "price": 745.71,
         "pictures": "Sapien.jpeg",
@@ -97,7 +97,7 @@
         "flavortext": null,
         "description": "Mandatory radical hub",
         "usage": null,
-        "price": 66.0,
+        "price": 66,
         "pictures": "Luctus.jpeg",
         "inSale": true,
         "discount": null,
@@ -903,7 +903,7 @@
         "flavortext": null,
         "description": "Extended needs-based encryption",
         "usage": null,
-        "price": 671.0,
+        "price": 671,
         "pictures": "Lectus.jpeg",
         "inSale": true,
         "discount": null,
@@ -1298,5 +1298,20 @@
         "inSale": false,
         "discount": null,
         "category": null
+    },
+    {
+        "id": 102
+    },
+    {
+        "id": 102
+    },
+    {
+        "id": 102
+    },
+    {
+        "id": 102
+    },
+    {
+        "id": 102
     }
 ]
