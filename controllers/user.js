@@ -16,20 +16,7 @@ const controller = {
         let users = JSON.parse(
             fs.readFileSync(path.join(__dirname, "..", "data", "users.json"))
         );
-
-        // const file = req.file;
-        // const newUser = {};
-        // "id": 1,
-        // "first_name": "Fred",
-        // "last_name": "Dupree",
-        // "email": "fdupree0@slate.com",
-        // "password": "GTutlrTVnIb",
-        // "category": "user",
-        // "image": "user_1.jpg"
-        // res.send(xxxxxxxxxxxxxxxxx);
-        // load database
-        // create user object
-        let user = {
+        let user = { //Load user
             id: users.length,
             first_name: req.body.name,
             last_name: req.body.lastName,

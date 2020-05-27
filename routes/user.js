@@ -46,7 +46,7 @@ router.get("/cart", controller.cart);
 // add products
 
 router.get("/add", pController.create); // needs a new middleware
-router.post("/add", upload.any('file'), pController.save);
+router.post("/add", upload.single('file'), pController.save);
 router.get("/success", function (req,res,next) {
     res.end()
     }

@@ -23,27 +23,27 @@
                 <!-- name -->
                 <div class="form-group">
                     <label for="name">Nombre de producto</label>
-                    <input type="text" class="form-control" id="name" aria-describedby="emailHelp"
+                    <input type="text" class="form-control" id="name" name="name" aria-describedby="emailHelp"
                     placeholder="Ej: Manual del Jugador Dungeons & Dragons 3.5" required>
                 </div>
 
                 <!-- price, number -->
                 <div class="form-group">
                     <label for="price">Precio del producto</label>
-                    <input type="text" class="form-control" id="price" aria-describedby="price" placeholder="Ej: 150.50"
+                    <input name="price" type="text" class="form-control" id="price" aria-describedby="price" placeholder="Ej: 150.50"
                         required>
                 </div>
 
                 <!-- description -->
                 <div class="form-group">
                     <label for="description">Descripción</label>
-                    <textarea class="form-control" id="description" rows="3"
+                    <textarea name="description" class="form-control" id="description" rows="3"
                     placeholder="Condiciones, detalles, consideraciones varias."></textarea>
                 </div>
                 <!-- usage, dropdown -->
                 <div class="form-group">
                     <label for="usage">Uso</label>
-                    <select class="form-control" id="usage" required>
+                    <select  name="usage"class="form-control" id="usage" required>
                         <option style="display: none;" value="">Elija una opción</option>
                         <option value="new">Nuevo (en su paquete)</option>
                         <option value="fine">Casi nuevo (poco uso)</option>
@@ -51,7 +51,7 @@
                         <option value="done">Muy usado</option>
                     </select>
                 </div>
-                <!-- category?? 
+                <!-- category??
                 <div class="form-group">
                     <label for="usage">Categoría</label>
                     <select class="form-control" id="usage">
@@ -67,22 +67,18 @@
                 <!-- flavortext -->
                 <div class="form-group">
                     <label for="flavortext">Flavortext</label>
-                    <input type="text" class="form-control" id="flavortext" placeholder="Flavortext">
+                    <input name="flavortext" type="text" class="form-control" id="flavortext" placeholder="Flavortext">
                 </div>
                 <div class="invalid-feedback">Example invalid custom select feedback</div>
                 <!-- <div class="invalid-feedback">
                                     Escriba un nombre de producto válido por favor.
                                 </div> -->
-                <!-- upload pictures, ITERATE IF THERE IS A PICTURE UPLOADED? -->
+                <!-- upload pictures, ITERATE IF THERE IS A PICTURE UPLOADED? 
                 <div class="form-group">
                     <label for="prodPics">Subir fotos</label>
                     <input type="file"  class="form-control-file" id="prodPics">
-                </div>
+                </div>-->
 
-                <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Capaz esto resulta util?</label>
-                </div>
 
                 <button class="btn btn-primary" type="submit">Crear producto</button>
 

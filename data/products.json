@@ -1259,59 +1259,5 @@
         "inSale": true,
         "discount": null,
         "category": null
-    },
-    {
-        "id": 98,
-        "name": "Chester Warlawe",
-        "cost": "CZK",
-        "flavortext": null,
-        "description": "Switchable real-time framework",
-        "usage": null,
-        "price": 938.08,
-        "pictures": "Dictumst.jpeg",
-        "inSale": true,
-        "discount": null,
-        "category": null
-    },
-    {
-        "id": 99,
-        "name": "Giselbert Chaudron",
-        "cost": "EUR",
-        "flavortext": null,
-        "description": "Re-contextualized methodical help-desk",
-        "usage": null,
-        "price": 17.72,
-        "pictures": "InQuis.jpeg",
-        "inSale": false,
-        "discount": null,
-        "category": null
-    },
-    {
-        "id": 100,
-        "name": "Sheena Cuschieri",
-        "cost": "JPY",
-        "flavortext": null,
-        "description": "User-friendly systemic methodology",
-        "usage": null,
-        "price": 722.47,
-        "pictures": "PurusEuMagna.jpeg",
-        "inSale": false,
-        "discount": null,
-        "category": null
-    },
-    {
-        "id": 102
-    },
-    {
-        "id": 102
-    },
-    {
-        "id": 102
-    },
-    {
-        "id": 102
-    },
-    {
-        "id": 102
     }
 ]

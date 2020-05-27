@@ -28,7 +28,12 @@ const controller = {
    },
    save: function (req, res, next) {
       // saves the product, POST
-      let products = JSON.parse(fs.readFileSync(pathDB)); // load database
+      //let products = JSON.parse(fs.readFileSync(pathDB)); // load database
+      let products = JSON.parse(
+         fs.readFileSync(
+            path.join(__dirname, "..", "data", "products.json")
+         )
+      );
       //handle the req
       let product = {
          id: 102,
