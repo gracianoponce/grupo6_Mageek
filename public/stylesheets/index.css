@@ -1,3 +1,16 @@
 .titular {
-    margin-top: 3vh;
+    padding-top: 4vh;
+}
+
+#principal{
+    background-color: #759D7B;
+    background-size: 100%;
+}
+
+.slogan{
+    padding-bottom: 4vh;
+    margin-bottom: inherit;
+}
+.carrito-cont{
+    background-color: #759D7B;
 }

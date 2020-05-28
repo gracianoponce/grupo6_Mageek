@@ -13,12 +13,24 @@
   </header>
 
   <main>
-    <h1 class="text-center titular">Mageek!</h1>
-    <nav class="container carrito-cont">
-      <div class="row justify-content-center">
+    <div id="principal">
+      <h1 class="text-center titular">Mageek!</h1>
+      <p class="text-center slogan">La mejor geek sotre del pais!!!!</p>
+    </div>
+    <div class="container carrito-cont">
+      <div class="row justify-content-center col-sm-3">
         <%- include("partials/producto-carrito") %>
       </div>
-    </nav>
+            <div class="row justify-content-center col-sm-3">
+        <%- include("partials/producto-carrito") %>
+      </div>
+            <div class="row justify-content-center col-sm-3">
+        <%- include("partials/producto-carrito") %>
+      </div>
+            <div class="row justify-content-center col-sm-3">
+        <%- include("partials/producto-carrito") %>
+      </div>
+    </div>
   </main>
 
   <nav></nav>
