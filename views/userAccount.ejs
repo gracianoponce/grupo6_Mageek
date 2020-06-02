@@ -3,10 +3,9 @@
 
 <head>
     <%- include("partials/head") %>
-    <link rel="stylesheet" href="/stylesheets/cart.css" />
+    <!-- <link rel="stylesheet" href="/stylesheets/cart.css" /> -->
     <link rel="stylesheet" href="/stylesheets/style.css" />
     <link rel="stylesheet" href="/stylesheets/user.css" />
-    <link rel="stylesheet" href="/stylesheets/footer.css">
 </head>
 
 <body>
@@ -17,7 +16,7 @@
     <main>
         <h1 class="">Bienvenid@ <%= loggedUser.first_name %></h1>
         <h3 class="">Historial de compra:</h3>
-        <nav class="container carrito-cont">
+        <nav class="container producto-cont">
             <div class="row justify-content-center">
                 <% let userHistory = [1,2,3,4,5]; for (let i = 0;i < userHistory.length; i++) { %>
                 <%- include("partials/history-product") %>

@@ -1259,5 +1259,13 @@
         "inSale": true,
         "discount": null,
         "category": null
+    },
+    {
+        "id": 102,
+        "name": "sdfasdf",
+        "price": "231",
+        "description": "fasdfasga agf aserf qg",
+        "usage": "new",
+        "flavortext": "kjzhdfr tuhdfvlads"
     }
 ]
