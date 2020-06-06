@@ -5,11 +5,13 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var bodyParser = require("body-parser");
 var multer = require("multer");
-// Router
+var session = require("express-session")
 
+// Router
 const indexRouter = require('./routes/index');
 const productRouter = require('./routes/product');
 const userRouter = require('./routes/user')
+const secret = 'Mageek secret code'
 
 var app = express();
 
@@ -20,9 +22,22 @@ app.set('view engine', 'ejs');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
+app.use(
+    session({
+        secret: secret,
+        name: "mageek_user_cookie",
+        resave: false,
+        saveUninitialized: false,
+        cookie: {
+            path: "/",
+            httpOnly: false,
+            maxAge: 24 * 60 * 60 * 1000,
+        },
+    })
+);
+app.use(cookieParser(secret));
 app.use(express.static(path.join(__dirname, 'public')));
-;
+
 
 // Routes
 app.use('/', indexRouter);

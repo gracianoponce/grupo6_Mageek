@@ -15,6 +15,13 @@
 
     <main>
         <h1 class="">Bienvenid@ <%= loggedUser.first_name %></h1>
+
+        <form name="logout" method="post" action="/user/logout">
+            <label for="logoutB">
+                <input name="logoutB" type="submit" id="logoutB" value="logout">
+            </label>
+        </form>
+
         <h3 class="">Historial de compra:</h3>
         <nav class="container producto-cont">
             <div class="row justify-content-center">

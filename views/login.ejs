@@ -3,10 +3,7 @@
 
 <head>
     <%- include("partials/head") %>
-    <link rel="stylesheet" href="/stylesheets/cart.css" />
     <link rel="stylesheet" href="/stylesheets/style.css" />
-    <link rel="stylesheet" href="/stylesheets/user.css" />
-    <link rel="stylesheet" href="/stylesheets/footer.css">
 </head>
 
 <body>
@@ -28,8 +25,8 @@
                 <input type="password" class="form-control" id="password" name='password' placeholder="Password">
             </div>
             <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Recordar usuario</label>
+                <input type="checkbox" class="form-check-input" name="remember" value="remember"  id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1" >Recordar usuario</label>
             </div>
             <button type="submit" class="btn btn-primary">Entrar</button>
         </form>
