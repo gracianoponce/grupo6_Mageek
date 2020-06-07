@@ -1,17 +1,17 @@
-var express = require('express');
-var createError = require('http-errors');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var bodyParser = require("body-parser");
-var multer = require("multer");
-var session = require("express-session")
-
+const express = require('express');
+const createError = require('http-errors');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const bodyParser = require("body-parser");
+const multer = require("multer");
+const session = require("express-session");
+const methodOverride = require("method-override");
 // Router
 const indexRouter = require('./routes/index');
 const productRouter = require('./routes/product');
-const userRouter = require('./routes/user')
-const secret = 'Mageek secret code'
+const userRouter = require('./routes/user');
+const secret = 'Mageek secret code';
 
 var app = express();
 
@@ -19,6 +19,7 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+app.use(methodOverride('_method'));
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

@@ -71,5 +71,16 @@ router.post(
 );
 router.get("/success", function (req, res, next) {
     res.end();
+})
+
+// Edit user
+router.get("/edit", mwLoggedIn, function (req, res, next) {
+    // get the logged user
+    // save to loggedUser
+    res.render ("userEdit"); // add {loggedUser:loggedUser}
 });
+router.put("/edit/:id", mwLoggedIn, controller.logEdit);
+
+
+;
 module.exports = router;

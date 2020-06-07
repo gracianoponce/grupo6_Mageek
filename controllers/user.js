@@ -30,11 +30,11 @@ const controller = {
         );
         let user = {
             //Load user
-            id: users.length,
+            id: users.length, // new code required: check last user's id, then increase by 1
             first_name: req.body.name,
             last_name: req.body.lastName,
             email: req.body.email,
-            image: req.file.filename,
+            // image: req.file.filename,
         };
         //   validate password, otherwise error
         const hash = function () {
@@ -71,47 +71,84 @@ const controller = {
     },
     entry: (req, res, next) => {
         users.forEach((user) => {
-        // check user db for matches, else discard cookie
-        if (
-            req.cookies.userId == user.id || //find out which one later?
-            req.session.userId == user.id
-        ) {
-            var loggedUser = user;
-            res.render("userAccount", {
-                loggedUser: loggedUser,
-            });
-            res.end ();
-        }});
+            // check user db for matches, else discard cookie
+            if (
+                req.cookies.userId == user.id || //find out which one later?
+                req.session.userId == user.id
+            ) {
+                var loggedUser = user;
+                res.render("userAccount", {
+                    loggedUser: loggedUser,
+                });
+                res.end();
+            }
+        });
         res.render("login");
     },
     checkin: (req, res, next) => {
         users.forEach((user) => {
             if (
                 // Checks array for user match, else bounce HASH PASS LATER
-                ((user.id == Number(req.body.loginCreds) ||
-                    user.email == req.body.loginCreds)) &&
+                (user.id == Number(req.body.loginCreds) ||
+                    user.email == req.body.loginCreds) &&
                 user.password == req.body.password
             ) {
                 // when checkbox is on, save a cookie. either way, proceed with user as param.
                 if (req.body.remember == "remember") {
-                    res.cookie("userId", user.id, {'maxAge':60000000});
+                    res.cookie("userId", user.id, {
+                        maxAge: 60000000,
+                    });
                 }
-                console.log(req.session);
                 req.session.userId = user.id;
-                console.log(req.session);
                 const loggedUser = user;
-                res.render("userAccount", {
+                return res.render("userAccount", {
                     loggedUser: loggedUser,
                 });
-                next();
             }
         });
-        res.redirect("registerFailed");
+        // res.redirect("registerFailed");
     },
-    logout: (req,res,next) => {
-        res.clearCookie ('userId'); // maybe as a middleware?
+    logout: (req, res, next) => {
+        res.clearCookie("userId"); // maybe as a middleware?
         req.session.userId = null;
-        res.render('login');
+        res.render("login");
+    },
+    logEdit: (req, res, next) => {
+        // load DB
+        const userId = req.params.id;
+        let users = JSON.parse(
+            fs.readFileSync(
+                path.join(
+                    __dirname,
+                    "..",
+                    "data",
+                    "users.json"
+                )
+            )
+        );
+        //Load user
+        let user = users[userId];
+        // handle POST form
+        // name lastName email
+        if (req.body.name != "") {
+            user.name = req.body.name;
+        }if (req.body.lastName != "") {
+            user.lastName = req.body.lastName;
+        }if (req.body.email != "") {
+            user.email = req.body.email;
+        }
+        // check each field for existance
+        console.log("el req.body es ", req.body);
+        let user = {
+            id: users.length,
+            first_name: req.body.name,
+            last_name: req.body.lastName,
+            email: req.body.email,
+            image: req.file.filename,
+        };
+        // enact changes
+        // save to DB
+        res.render("login");
     },
     cart: (req, res, next) => {
         res.render("cart", { title: "Express" }); // Needs DB
