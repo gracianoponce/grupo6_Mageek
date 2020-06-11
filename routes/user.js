@@ -9,18 +9,13 @@ const controller = require(path.join(
     "controllers",
     "user"
 ));
-const pController = require(path.join(
-    __dirname,
-    "..",
-    "controllers",
-    "product"
-)); //is this controller really necessary?
 const mwLoggedIn = require(path.join(
     __dirname,
     "..",
     "middlewares",
     "middlewareRedirect"
 ));
+
 
 // SET STORAGE W/ MULTER
 const multer = require("multer");
@@ -63,24 +58,19 @@ router.get("/cart", controller.cart);
 
 // add products
 
-router.get("/add", mwLoggedIn, pController.create); // needs a new middleware, right now bounces guests
-router.post(
-    "/add",
-    upload.single("file"),
-    pController.save
-);
 router.get("/success", function (req, res, next) {
     res.end();
 })
 
 // Edit user
-router.get("/edit", mwLoggedIn, function (req, res, next) {
-    // get the logged user
-    // save to loggedUser
-    res.render ("userEdit"); // add {loggedUser:loggedUser}
-});
+router.get("/edit", mwLoggedIn, controller.editor);
 router.put("/edit/:id", mwLoggedIn, controller.logEdit);
 
+// Failed Register
+router.get("/registerFailed", function (req,res,next) {
+    res.render("registerFailed");
+})
 
-;
+
+
 module.exports = router;

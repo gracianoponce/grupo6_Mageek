@@ -1,9 +1,6 @@
 [
     {
         "id": 1,
-        "first_name": "Fred",
-        "last_name": "Dupree",
-        "email": "fdupree0@slate.com",
         "password": "GTutlrTVnIb",
         "category": "user",
         "image": "user_1.jpg"
@@ -37,27 +34,18 @@
     },
     {
         "id": 5,
-        "first_name": "Augusta",
-        "last_name": "Stowgill",
-        "email": "astowgill4@youtu.be",
         "password": "5S7M1l",
         "category": "user",
         "image": "user_5.jpg"
     },
     {
         "id": 6,
-        "first_name": "Willdon",
-        "last_name": "Kempston",
-        "email": "1@asd.com",
         "password": "lol",
         "category": "user",
         "image": "user_6.jpg"
     },
     {
         "id": 7,
-        "first_name": "Vicki",
-        "last_name": "Buckmaster",
-        "email": "vbuckmaster6@photobucket.com",
         "password": "Cn3vzBgv",
         "category": "user",
         "image": "user_7.jpg"
@@ -193,5 +181,17 @@
         "email": "edgarmon@gmail.com",
         "image": "1590046146188.png",
         "password": "$2b$10$JKOfCHL0IzoFzbtG.ZiBsurrcKbLVO0sb58vurSLnmb/Bvgo8pGR6"
+    },
+    {
+        "id": 7,
+        "password": "Cn3vzBgv",
+        "category": "user",
+        "image": "user_7.jpg"
+    },
+    {
+        "id": 5,
+        "password": "5S7M1l",
+        "category": "user",
+        "image": "user_5.jpg"
     }
 ]
