@@ -1267,5 +1267,13 @@
         "description": "fasdfasga agf aserf qg",
         "usage": "new",
         "flavortext": "kjzhdfr tuhdfvlads"
+    },
+    {
+        "id": 102,
+        "name": "hammer&sickle",
+        "price": "19.17",
+        "description": "Needs update.",
+        "usage": "done",
+        "flavortext": ""
     }
 ]

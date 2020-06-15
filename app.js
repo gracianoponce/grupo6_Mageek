@@ -7,11 +7,14 @@ const bodyParser = require("body-parser");
 const multer = require("multer");
 const session = require("express-session");
 const methodOverride = require("method-override");
+const secret = 'Mageek secret code';
+
+
 // Router
 const indexRouter = require('./routes/index');
 const productRouter = require('./routes/product');
 const userRouter = require('./routes/user');
-const secret = 'Mageek secret code';
+
 
 var app = express();
 
@@ -39,11 +42,10 @@ app.use(
 app.use(cookieParser(secret));
 app.use(express.static(path.join(__dirname, 'public')));
 
-
 // Routes
-app.use('/', indexRouter);
 app.use('/product', productRouter);
 app.use('/user', userRouter);
+app.use('/', indexRouter);
 
 
 // catch 404 and forward to error handler

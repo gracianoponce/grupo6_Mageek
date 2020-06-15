@@ -14,7 +14,7 @@
 
     <main>
 
-        <form enctype="multipart/form-data" action="/user/edit?_method=PUT" method="POST">
+        <form enctype="multipart/form-data" action="/user/edit/<%= loggedUser.id %>?_method=PUT" method="POST">
 
             <!-- "first_name": "Fred", -->
             <div class="form-group">
