@@ -13,20 +13,20 @@ function middlewareRedirect(req, res, next) {
     console.log(
         "middleware Redirect: " + req.session.userId
     );
-    let loggedUser = users.find((user) => {
-        // check user db for matches, else discard cookie
-        return (
-            req.cookies.userId == user.id || //find out which one later?
-            req.session.userId == user.id
-        );
-    });
-    if (loggedUser.id > 0) {
-        next();
-    } else {
-        console.log("next didnt catch");
-        res.clearCookie("userId");
-        req.session.userId = null;
-        res.render("login");
+    if (req.session.userId != undefined) {
+        let loggedUser = users.find((user) => {
+            // check user db for matches, else discard cookie
+            return (
+                req.cookies.userId == user.id || //find out which one later?
+                req.session.userId == user.id
+            );
+        });
+            next();
+        } else {
+            console.log("next didnt catch");
+            res.clearCookie("userId");
+            req.session.userId = null;
+            res.render("login");
+        }
     }
-}
 module.exports = middlewareRedirect;

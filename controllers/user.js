@@ -52,7 +52,7 @@ const controller = {
                     JSON.stringify(users, null, 4)
                 );
 
-                res.send("Éxito!");
+                res.redirect("success");
             }
         } else {
             console.log("algo malio sal");

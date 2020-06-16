@@ -54,12 +54,16 @@ router.post("/login", controller.checkin);
 
 // Cart page
 
-router.get("/cart", controller.cart);
+router.get("/cart",mwLoggedIn, controller.cart);
 
 // add products
 
 router.get("/success", function (req, res, next) {
-    res.end();
+    res.render("success");
+})
+
+router.post("/success", function (req, res, next) {
+    res.render("success");
 })
 
 // Edit user
