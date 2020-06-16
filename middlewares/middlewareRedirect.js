@@ -10,9 +10,6 @@ const users = JSON.parse(fs.readFileSync(pathDB));
 
 function middlewareRedirect(req, res, next) {
     // if logged in, proceed to userAccount
-    console.log(
-        "middleware Redirect: " + req.session.userId
-    );
     if (req.session.userId != undefined) {
         let loggedUser = users.find((user) => {
             // check user db for matches, else discard cookie
