@@ -54,3 +54,21 @@ Si bien se empezo a dar un uso mayor, nos falta mejorar bastante con el uso de e
 #### Comunicacion
 Mejoramos en este punto. Si bien es un punto mejorable, logramos comunicarnos mucho mas.
 
+## Sprint 4
+
+### Puntos negativos
+
+#### Organizacion y obejtivos
+De a poco nos encaminamos en cumplir bien con los objetivos, pero falta pulir este aspecto mas
+
+### Puntos positivos
+
+#### Comunicacion
+Logramos comunicarnos bien para este sprint, aunque nos falta un poco mas
+
+#### Tello
+Uso mas frecuente y util
+
+
+
+
