@@ -1,3 +1,18 @@
+DROP DATABASE IF EXISTS mageek;
+CREATE DATABASE mageek;
+
+USE mageek;
+
+SET NAMES utf8;
+SET time_zone
+= '-03:00';
+SET foreign_key_checks
+= 0;
+SET sql_mode
+= 'NO_AUTO_VALUE_ON_ZERO';
+
+
+
 #
 # TABLE STRUCTURE FOR: artes
 #
