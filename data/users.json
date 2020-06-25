@@ -40,7 +40,6 @@
     },
     {
         "id": 6,
-        "first_name": "definitely not a user",
         "password": "lol",
         "category": "user",
         "image": "user_6.jpg"
@@ -201,5 +200,11 @@
         "last_name": "pedro",
         "email": "jp@asd.com",
         "password": "$2b$10$m0KO2n0mMbo99.bft8NjjOAKEDpWbaTuN6NnPW/LtQ5ABvrXTScha"
+    },
+    {
+        "id": 6,
+        "password": "lol",
+        "category": "user",
+        "image": "user_6.jpg"
     }
 ]

@@ -54,7 +54,8 @@ const controller = {
 
                 res.redirect("success");
             }
-        } else {
+        } else {$2b$10$m0KO2n0mMbo99.bft8NjjOAKEDpWbaTuN6NnPW /
+                    LtQ5ABvrXTScha;
             console.log("algo malio sal");
         }
         res.send(req.body);
@@ -96,17 +97,17 @@ const controller = {
     },
     checkin: (req, res, next) => {
         console.log("starting checkin");
-            user = users.find((n) => {
+            user = users.find((eachUser) => {
                 console.log(
                     "checkin user n. " +
-                        n.id +
+                        eachUser.id +
                         " " +
                         req.body.loginCreds
                 );
                 return (
-                    (n.id == Number(req.body.loginCreds) ||
-                        n.email == req.body.loginCreds) &&
-                    n.password == req.body.password
+                    (eachUser.id == Number(req.body.loginCreds) ||
+                        eachUser.email == req.body.loginCreds) &&
+                    bcrypt.compareSync(req.body.password,eachUser.password)
                 );
             });
             console.log(user);
