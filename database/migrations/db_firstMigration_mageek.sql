@@ -90,4 +90,4 @@ MODIFY COLUMN `tipo` varchar(50) COLLATE utf8_unicode_ci NOT NULL UNIQUE;
 ALTER TABLE usuarios
 MODIFY COLUMN `email` varchar(50) COLLATE utf8_unicode_ci NOT NULL UNIQUE,
 MODIFY COLUMN `nombre_de_usuario` varchar(30) COLLATE utf8_unicode_ci NOT NULL UNIQUE,
-ADD COLUMN `password` varchar(30) COLLATE utf8_unicode_ci NOT NULL;
+ADD COLUMN `password` varchar(60) COLLATE utf8_unicode_ci NOT NULL;
