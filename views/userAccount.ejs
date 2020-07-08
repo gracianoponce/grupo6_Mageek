@@ -10,26 +10,25 @@
 
 <body>
     <header>
-        <%- include("partials/header2") %>
+        <%- include("partials/header") %>
     </header>
 
     <main>
-        <h1 class="">Bienvenid@ <%= loggedUser.first_name %></h1>
+        <h1 class="">Bienvenid@ <%- user.nombre %> </h1>
 
         <form name="logout" method="post" action="/user/logout">
             <label for="logoutB">
                 <input name="logoutB" type="submit" id="logoutB" value="logout">
             </label>
         </form>
+        <p>
+            `nombre_de_usuario`: <%- user.nombre_de_usuario %>
+            `password`: <%- user.password %>
+            `apellido`: <%- user.apellido %>
+        </p>
+        <a href="/user/edit">
+        <button class="btn btn-success">Edit user</button></a>
 
-        <h3 class="">Historial de compra:</h3>
-        <nav class="container producto-cont">
-            <div class="row justify-content-center">
-                <% let userHistory = [1,2,3,4,5]; for (let i = 0;i < userHistory.length; i++) { %>
-                <%- include("partials/history-product") %>
-                <% } %>
-            </div>
-        </nav>
     </main>
 
     <footer><%- include("partials/footer") %></footer>

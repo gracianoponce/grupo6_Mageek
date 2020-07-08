@@ -9,11 +9,11 @@ const controller = require(path.join(
     "controllers",
     "user"
 ));
-const mwLoggedIn = require(path.join(
+const mwLoggedIn = require(path.join( //checks logged status
     __dirname,
     "..",
     "middlewares",
-    "middlewareRedirect"
+    "mwIsLoggedIn"
 ));
 
 
@@ -65,9 +65,11 @@ router.get("/success", function (req, res, next) {
 router.post("/success", function (req, res, next) {
     res.render("success");
 })
+// Read user
+router.get("/account", controller.account);
 
 // Edit user
-router.get("/edit", mwLoggedIn, controller.editor);
+router.get("/edit", controller.editor);
 router.put("/edit/:id", mwLoggedIn, controller.logEdit);
 
 // Failed Register

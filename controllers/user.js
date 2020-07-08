@@ -2,19 +2,27 @@ const fs = require("fs");
 const path = require("path");
 const bcrypt = require("bcrypt");
 if (!loggedUser) var loggedUser = {}; // Instances loggedUser in case it wasn't already
-const pathDB = path.join(
-    __dirname,
-    "..",
-    "data",
-    "users.json"
-);
-let users = JSON.parse(fs.readFileSync(pathDB));
+const pathDB = path.join(__dirname, "..", "data", "users.json");
+const db = require("../database/models");
+const { serialize } = require("v8");
+
+// module
+const catchUser = async function (cookie, session) {
+    if (cookie || session) {
+        return await db.Usuarios.findOne({
+            where: {id: cookie || session},
+        })
+    } else {
+        console.log(`${cookie} ${session}`); // Load user in cookies or session
+    }
+}
 
 const controller = {
     userReg: (req, res, next) => {
         // Register GET
         res.render("userRegister");
     },
+
     create: function (req, res, next) {
         //Creates a new user POST
         //  Load user DB
@@ -28,111 +36,79 @@ const controller = {
         };
         //   validate password, otherwise error
         const hash = function () {
-            if (req.body.pass)
-                return bcrypt.hashSync(req.body.pass, 10);
+            if (req.body.pass) return bcrypt.hashSync(req.body.pass, 10);
         };
         user.password = hash();
         if (req.body.pass2) {
-            if (
-                bcrypt.compareSync(
-                    req.body.pass2,
-                    user.password
-                )
-            ) {
+            if (bcrypt.compareSync(req.body.pass2, user.password)) {
                 // Success validating
                 users.push(user);
                 // Save new array
                 fs.writeFileSync(
-                    path.join(
-                        __dirname,
-                        "..",
-                        "data",
-                        "users.json"
-                    ),
+                    path.join(__dirname, "..", "data", "users.json"),
                     JSON.stringify(users, null, 4)
                 );
 
                 res.redirect("success");
             }
-        } else {$2b$10$m0KO2n0mMbo99.bft8NjjOAKEDpWbaTuN6NnPW /
-                    LtQ5ABvrXTScha;
+        } else {
+            $2b$10$m0KO2n0mMbo99.bft8NjjOAKEDpWbaTuN6NnPW / LtQ5ABvrXTScha;
             console.log("algo malio sal");
         }
         res.send(req.body);
     },
-    entry: (req, res, next) => {
-        let user = users.find((n) => {
-            console.log(`
-            user n. ${n.id}
-            checking for ${req.cookies.userId}`);
-            return (
-                n.id == req.cookies.userId ||
-                n.id == req.session.userId
-            );
-        });
-        console.log(`
-        user: ${user}
-        cookies: ${req.cookies.userId}
-        session: ${req.session.userId}`);
-        // check user db for matches, else discard cookie
-        if (user != undefined) {
-            if (
-                req.cookies.userId == user.id || //find out which one later?
-                req.session.userId == user.id
-            ) {
-                console.log("Matched!");
-                var loggedUser = user;
-                res.render("userAccount", {
-                    loggedUser: loggedUser,
-                });
-                console.log("Ending comm");
-                res.end();
-            }
-        } else {
-            console.log(
-                "didn't match, defaulting to login"
-            );
+
+    entry: async function (req, res, next) {
+        let user = await catchUser(req.cookies.userId, req.session.userId);
+
+        if (!user) {
+            // If there's no user found, delete cookies, notify&stop
+            res.clearCookie("userId");
             res.render("login");
+        } else {
+            /* console.log(`
+            user: ${user}
+            cookies: ${req.cookies.userId}
+            session: ${req.session.userId}`);   // small dev tool, leave unscathed */
+            res.render("userAccount", {
+                user : user,
+            });
         }
     },
-    checkin: (req, res, next) => {
+
+    checkin: async function (req, res, next) {
         console.log("starting checkin");
-            user = users.find((eachUser) => {
-                console.log(
-                    "checkin user n. " +
-                        eachUser.id +
-                        " " +
-                        req.body.loginCreds
-                );
-                return (
-                    (eachUser.id == Number(req.body.loginCreds) ||
-                        eachUser.email == req.body.loginCreds) &&
-                    bcrypt.compareSync(req.body.password,eachUser.password)
-                );
-            });
-            console.log(user);
-            if (user) {
-                console.log("got a user");
-                // when checkbox is on, save a cookie. either way, proceed with user as param.
-                if (req.body.remember == "remember") {
-                    res.cookie("userId", user.id, {
-                        maxAge: 60000000,
-                    });
-                }
-                req.session.userId = user.id;
-                const loggedUser = user;
-                res.render("userAccount", {
-                    loggedUser: loggedUser,
+        let user = await db.Usuarios.findOne({
+            where: {
+                email: req.body.loginCreds, //change variable names please
+            },
+        });
+        const passMatch = await bcrypt.compare(req.body.password, user.password);
+        if (!passMatch) {
+            console.log(`passwords mismatch: ${req.body.password}, ${user.password}`);
+            res.send('pass mismatch, needs a view')
+        } else {
+            console.log("got a user");
+            // when checkbox is on, save a cookie. either way, proceed with user as param.
+            if (req.body.remember == "remember") {
+                res.cookie("userId", user.id, {
+                    maxAge: 1 * (1000 * 60 * 60 * 24), //in days
                 });
-                res.end();
-            } else res.redirect("/user/registerFailed");
-        ;
+            }
+            req.session.userId = user.id;
+            res.render("userAccount", {
+                user: user,
+            });
+            res.end();
+        }
     },
+
     logout: (req, res, next) => {
         res.clearCookie("userId"); // maybe as a middleware?
         req.session.userId = null;
         res.render("login");
     },
+
     logEdit: (req, res, next) => {
         // load DB
         const userId = req.params.id;
@@ -148,10 +124,7 @@ const controller = {
         // check each field for existance
         // enact changes
         if (req.body.name != "") {
-            console.log(
-                "Llegamos! El usuario era ",
-                user.first_name
-            );
+            console.log("Llegamos! El usuario era ", user.first_name);
             user.first_name = req.body.name;
         }
         if (req.body.lastName != "") {
@@ -165,33 +138,31 @@ const controller = {
         // user.id = users [users.length-1].id+1;
         users.push(user);
         let loggedUser = user;
-        fs.writeFileSync(
-            pathDB,
-            JSON.stringify(users, null, 4)
-        );
+        fs.writeFileSync(pathDB, JSON.stringify(users, null, 4));
         return res.render("userAccount", {
             loggedUser: loggedUser,
         });
     },
+
     editor: function (req, res, next) {
         // get the logged user
-        users.forEach((user) => {
+        let user = catchUser(req.cookies.userId,req.session.userId)
             // check user db for matches, else discard cookie
-            if (
-                req.cookies.userId == user.id || //find out which one later?
-                req.session.userId == user.id
-            ) {
-                let loggedUser = user;
-                return res.render("userEdit", {
-                    loggedUser: loggedUser,
-                });
-            }
-        });
-        // save to loggedUser
-        // res.render("userEdit"); // add {loggedUser:loggedUser
-    },
+            let loggedUser = user;
+            return res.render("userEdit", {
+                loggedUser: loggedUser,
+            });
+            // save to loggedUser
+            // res.render("userEdit"); // add {loggedUser:loggedUser
+        },
+
     cart: (req, res, next) => {
         res.render("cart", { title: "Express" }); // Needs DB
+    },
+
+    account: async function (req, res, next) {
+        let user = await db.Usuarios.findByPk(101);
+        res.render("userAccount", { user: user });
     },
 };
 

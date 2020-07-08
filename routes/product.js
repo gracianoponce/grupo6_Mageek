@@ -8,7 +8,7 @@ const mwLoggedIn = require(path.join(
     __dirname,
     "..",
     "middlewares",
-    "middlewareRedirect"
+    "mwIsLoggedIn"
 ));
 // SET STORAGE
 const multer = require("multer");

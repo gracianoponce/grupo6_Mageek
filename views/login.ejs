@@ -8,15 +8,15 @@
 
 <body>
     <header>
-        <%- include("partials/header2") %>
+        <%- include("partials/header") %>
     </header>
 
     <main>
         <h3 class="">User login:</h3>
         <form method="POST" action="/user/login">
             <div class="form-group">
-                <label for="loginCreds">Número de usuario o email</label>
-                <input type="text" class="form-control" id="loginCreds" name="loginCreds" aria-describedby="loginCreds"
+                <label for="loginCreds">Email</label>
+                <input type="email" class="form-control" id="loginCreds" name="loginCreds" aria-describedby="loginCreds"
                     placeholder="Formato numérico o email">
                 <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
             </div>
