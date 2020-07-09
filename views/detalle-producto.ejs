@@ -9,11 +9,20 @@
 
 <body>
     <header>
-        <%- include("partials/header2") %>
+        <%- include("partials/header") %>
     </header>
 
     <main>
-        <%- include("partials/producto") %>
+        <!-- <SPACE%- include("partials/producto") %> -->
+        <h3>Producto: <%- product.nombre %>. </h3>
+        <p>Quedan: <%- product.stock %>. </p>
+        <p>Cuestan: $<%- product.precio %> cada uno.</p>
+        <p>Es de la categoría: <%- product.categorias.categoria %>.</p>
+        <% switch (product.id_categoria) { case 2:%>
+            
+        <% ;break;case 1:%>
+            <p>Es tipo ab!!</p>
+        <% } %>
     </main>
 
     <nav></nav>
